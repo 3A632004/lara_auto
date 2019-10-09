@@ -6,14 +6,16 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit1212783221175dd668205bf21842c110
 {
+    public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
-        'P' => 
+        'S' => 
         array (
-            'Psr\\Log\\' => 8,
-        ),
-        'M' => 
-        array (
-            'Monolog\\' => 8,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Contracts\\Translation\\' => 30,
+            'Symfony\\Component\\Translation\\' => 30,
         ),
         'D' => 
         array (
@@ -22,17 +24,35 @@ class ComposerStaticInit1212783221175dd668205bf21842c110
     );
 
     public static $prefixDirsPsr4 = array (
-        'Psr\\Log\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Monolog\\' => 
+        'Symfony\\Contracts\\Translation\\' => 
         array (
-            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+            0 => __DIR__ . '/..' . '/symfony/translation-contracts',
+        ),
+        'Symfony\\Component\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation',
         ),
         'Demo\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Demo',
+        ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
+    );
+
+    public static $prefixesPsr0 = array (
+        'U' => 
+        array (
+            'UpdateHelper\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/kylekatarnls/update-helper/src',
+            ),
         ),
     );
 
@@ -41,6 +61,8 @@ class ComposerStaticInit1212783221175dd668205bf21842c110
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit1212783221175dd668205bf21842c110::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit1212783221175dd668205bf21842c110::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit1212783221175dd668205bf21842c110::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit1212783221175dd668205bf21842c110::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
